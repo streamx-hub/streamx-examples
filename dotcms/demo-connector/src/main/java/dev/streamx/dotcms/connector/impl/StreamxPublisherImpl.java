@@ -81,9 +81,9 @@ public class StreamxPublisherImpl implements StreamxPublisher {
     private StreamxPushSummary push(final String relativePath, final Data data,
                                     final Publisher<Data> publisher, final StreamxChannel streamxChannel) {
         try {
-            final Long eventId = publisher.publish(relativePath, data);
+            publisher.publish(relativePath, data);
 
-            return StreamxPushSummary.success(relativePath, streamxChannel, eventId);
+            return StreamxPushSummary.success(relativePath, streamxChannel);
         } catch (final StreamxClientException exc) {
             Logger.error(this.getClass(), "Cannot push content to StreamX", exc);
             return StreamxPushSummary.streamxError(relativePath, streamxChannel, exc.getMessage());

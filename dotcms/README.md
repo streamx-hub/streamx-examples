@@ -4,9 +4,10 @@ By completing the steps below, you will configure and validate an integration be
 
 # Prerequisites
 
-* TODO: Add link to public "Tutorial: Getting Started with StreamX Command Line Interface (CLI)" tutorial later
+* [StreamX Command Line Interface (CLI)](https://www.streamx.dev/guides/main/streamx-command-line-interface-reference.html)
 * [Docker Compose](https://docs.docker.com/compose/install/)
-* Locally cloned git repository 
+* Locally cloned git repository
+* [nip.io](https://nip.io/) (optional)
 
 # Setup
 
@@ -28,8 +29,7 @@ docker compose up -d
 > * an extra container network is added for connectivity to StreamX
 
 > See more information about dotCMS and Docker on the official
->
-documentation [Getting Started with dotCMS in Docker Containers ](https://www.dotcms.com/docs/latest/getting-started-with-dotcms-in-docker-containers).
+> documentation [Getting Started with dotCMS in Docker Containers ](https://www.dotcms.com/docs/latest/getting-started-with-dotcms-in-docker-containers).
 
 ## StreamX setup
 
@@ -46,26 +46,6 @@ To enable network communication between dotCMS and the StreamX ingestion service
 ```shell
 docker network connect dotcms-net rest-ingestion
 ```
-
-Also, depending on your operating system, complete one of the following steps to allow using `streamx.local` domain name
-as an alias for `localhost`
-
-* Linux/macOS
-
-  Execute the following command in a terminal
-
-  ```shell
-  sudo sh -c 'echo "127.0.0.1 streamx.local" >> /etc/hosts'
-  ```
-
-* Windows
-
-  Start any text editor in `Administration` mode, open the `C:\Windows\System32\drivers\etc\hosts` file and add
-  the following entry at the end of the file
-
-  ```
-  127.0.0.1 streamx.local
-  ```
 
 ## Connector installation
 
@@ -113,13 +93,13 @@ The StreamX connector will take care of pushing content to StreamX when you comp
 
 # Validation
 
-At this point StreamX should have all the dotCMS demo data processed which can be validated by
+At this point StreamX should have all the dotCMS demo data processed which can be validated by opening the following pages. In the demo we are using `nip.io` to map localhost to a more distinguishable hostname, but using localhost would also work.
 
-* Opening http://streamx.local/index.html in you web browser and navigate through the links to check blog and product
+* Open http://streamx.127.0.0.1.nip.io/index.html in you web browser and navigate through the links to check blog and product
   landing pages, or the sample blog article and product pages
-* Opening http://streamx.local/sitemap.xml in your web browser to check the content of the auto-generated sitemap.xml
+* Open http://streamx.127.0.0.1.nip.io/sitemap.xml in your web browser to check the content of the auto-generated sitemap.xml
   file
-* Opening http://streamx.local/search?query=Tee in your web browser to validate that hits for the search term `Tee`
+* Open http://streamx.127.0.0.1.nip.io/search?query=Containix in your web browser to validate that hits for the search term `Containix`
 
 ## Versions used for testing
 
@@ -128,4 +108,4 @@ Instructions and commands above were tested on:
 * `macOS 14.5 (23F79)`
 * `Docker Engine 26.1.4` with `containerd 1.6.33` and `runc 1.1.12`
 * `Docker Compose version v2.27.1-desktop.1`
-* `StreamX CLI 0.3.4` on `OpenJDK Runtime Environment Temurin-17.0.10+7 (build 17.0.10+7)`
+* `StreamX CLI 0.3.8` on `OpenJDK Runtime Environment Temurin-17.0.11+9 (build 17.0.11+9)`

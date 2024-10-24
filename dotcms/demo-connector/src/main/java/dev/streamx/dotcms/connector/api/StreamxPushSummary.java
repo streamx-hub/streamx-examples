@@ -13,7 +13,6 @@ public class StreamxPushSummary {
     PublicationResult result;
     String relativePath;
     StreamxChannel streamxChannel;
-    Long eventId;
     String errorMessage;
 
     /**
@@ -21,13 +20,11 @@ public class StreamxPushSummary {
      *
      * @param relativePath   relative path/URI where the resource was registered on
      * @param streamxChannel which channel the resource was published to
-     * @param eventId        the event ID returned by the StreamX ingestion API
      * @return object containing the summary
      */
     public static @Nonnull StreamxPushSummary success(@Nonnull final String relativePath,
-                                                      @Nonnull final StreamxChannel streamxChannel,
-                                                      @Nonnull final Long eventId) {
-        return new StreamxPushSummary(PublicationResult.SUCCESS, relativePath, streamxChannel, eventId, "N/A");
+                                                      @Nonnull final StreamxChannel streamxChannel) {
+        return new StreamxPushSummary(PublicationResult.SUCCESS, relativePath, streamxChannel, "N/A");
     }
 
     /**
@@ -41,7 +38,7 @@ public class StreamxPushSummary {
     public static @Nonnull StreamxPushSummary publicationError(@Nonnull final String relativePath,
                                                                @Nonnull final StreamxChannel streamxChannel,
                                                                @Nonnull final String errorMessage) {
-        return new StreamxPushSummary(PublicationResult.PUBLICATION_ERROR, relativePath, streamxChannel, -1L, errorMessage);
+        return new StreamxPushSummary(PublicationResult.PUBLICATION_ERROR, relativePath, streamxChannel, errorMessage);
     }
 
     /**
@@ -55,6 +52,6 @@ public class StreamxPushSummary {
     public static @Nonnull StreamxPushSummary streamxError(@Nonnull final String relativePath,
                                                            @Nonnull final StreamxChannel streamxChannel,
                                                            @Nonnull final String errorMessage) {
-        return new StreamxPushSummary(PublicationResult.STREAMX_ERROR, relativePath, streamxChannel, -1L, errorMessage);
+        return new StreamxPushSummary(PublicationResult.STREAMX_ERROR, relativePath, streamxChannel, errorMessage);
     }
 }
