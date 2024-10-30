@@ -1,13 +1,15 @@
 package dev.streamx.dotcms.connector.impl;
 
 import com.dotmarketing.util.Logger;
+import dev.streamx.blueprints.data.Asset;
+import dev.streamx.blueprints.data.Page;
+import dev.streamx.blueprints.data.WebResource;
 import dev.streamx.clients.ingestion.StreamxClient;
 import dev.streamx.clients.ingestion.exceptions.StreamxClientException;
 import dev.streamx.clients.ingestion.publisher.Publisher;
 import dev.streamx.dotcms.connector.api.StreamxChannel;
 import dev.streamx.dotcms.connector.api.StreamxPublisher;
 import dev.streamx.dotcms.connector.api.StreamxPushSummary;
-import lombok.Value;
 import org.apache.commons.io.IOUtils;
 
 import javax.annotation.Nonnull;
@@ -22,14 +24,14 @@ import java.nio.file.Files;
  */
 public class StreamxPublisherImpl implements StreamxPublisher {
 
-    private final Publisher<Data> pagePublisher;
-    private final Publisher<Data> assetPublisher;
-    private final Publisher<Data> webResourcePublisher;
+    private final Publisher<Page> pagePublisher;
+    private final Publisher<Asset> assetPublisher;
+    private final Publisher<WebResource> webResourcePublisher;
 
-    public StreamxPublisherImpl(final StreamxClient streamxClient) {
-        pagePublisher = streamxClient.newPublisher(StreamxChannel.PAGES.getName(), Data.class);
-        assetPublisher = streamxClient.newPublisher(StreamxChannel.ASSETS.getName(), Data.class);
-        webResourcePublisher = streamxClient.newPublisher(StreamxChannel.WEB_RESOURCES.getName(), Data.class);
+    public StreamxPublisherImpl(final StreamxClient streamxClient) throws StreamxClientException {
+        pagePublisher = streamxClient.newPublisher(StreamxChannel.PAGES.getName(), Page.class);
+        assetPublisher = streamxClient.newPublisher(StreamxChannel.ASSETS.getName(), Asset.class);
+        webResourcePublisher = streamxClient.newPublisher(StreamxChannel.WEB_RESOURCES.getName(), WebResource.class);
     }
 
     /**
@@ -39,9 +41,9 @@ public class StreamxPublisherImpl implements StreamxPublisher {
     @Override
     public StreamxPushSummary pushPage(@Nonnull final String relativePath, @Nonnull final String html) {
         try (final InputStream inputStream = IOUtils.toInputStream(html, Charset.defaultCharset())) {
-            final Data data = new Data(ByteBuffer.wrap(inputStream.readAllBytes()));
-
-            return push(relativePath, data, pagePublisher, StreamxChannel.PAGES);
+            final Page page = new Page(ByteBuffer.wrap(inputStream.readAllBytes()));
+            pagePublisher.publish(relativePath, page);
+            return StreamxPushSummary.success(relativePath, StreamxChannel.PAGES);
         } catch (final Exception exc) {
             Logger.error(this.getClass(), "Unknown error during pushing page to StreamX on relative path: " + relativePath, exc);
             return StreamxPushSummary.publicationError(relativePath, StreamxChannel.PAGES, exc.getMessage());
@@ -54,7 +56,14 @@ public class StreamxPublisherImpl implements StreamxPublisher {
     @Nonnull
     @Override
     public StreamxPushSummary pushAsset(@Nonnull final String relativePath, @Nonnull final File file) {
-        return push(relativePath, file, assetPublisher, StreamxChannel.ASSETS);
+        try {
+            final Asset asset = new Asset(ByteBuffer.wrap(Files.readAllBytes(file.toPath())));
+            assetPublisher.publish(relativePath, asset);
+            return StreamxPushSummary.success(relativePath, StreamxChannel.ASSETS);
+        } catch (final Exception exc) {
+            Logger.error(this.getClass(), "Unknown error during pushing asset to StreamX on relative path: " + relativePath, exc);
+            return StreamxPushSummary.publicationError(relativePath, StreamxChannel.ASSETS, exc.getMessage());
+        }
     }
 
     /**
@@ -63,35 +72,13 @@ public class StreamxPublisherImpl implements StreamxPublisher {
     @Nonnull
     @Override
     public StreamxPushSummary pushWebResource(@Nonnull final String relativePath, @Nonnull final File file) {
-        return push(relativePath, file, webResourcePublisher, StreamxChannel.WEB_RESOURCES);
-    }
-
-    private StreamxPushSummary push(final String relativePath, final File file,
-                                    final Publisher<Data> publisher, final StreamxChannel streamxChannel) {
         try {
-            final Data data = new Data(ByteBuffer.wrap(Files.readAllBytes(file.toPath())));
-
-            return push(relativePath, data, publisher, streamxChannel);
+            final WebResource webResource = new WebResource(ByteBuffer.wrap(Files.readAllBytes(file.toPath())));
+            webResourcePublisher.publish(relativePath, webResource);
+            return StreamxPushSummary.success(relativePath, StreamxChannel.WEB_RESOURCES);
         } catch (final Exception exc) {
-            Logger.error(this.getClass(), "Unknown error during pushing resource to StreamX on relative path: " + relativePath, exc);
-            return StreamxPushSummary.publicationError(relativePath, streamxChannel, exc.getMessage());
+            Logger.error(this.getClass(), "Unknown error during pushing web resource to StreamX on relative path: " + relativePath, exc);
+            return StreamxPushSummary.publicationError(relativePath, StreamxChannel.WEB_RESOURCES, exc.getMessage());
         }
-    }
-
-    private StreamxPushSummary push(final String relativePath, final Data data,
-                                    final Publisher<Data> publisher, final StreamxChannel streamxChannel) {
-        try {
-            publisher.publish(relativePath, data);
-
-            return StreamxPushSummary.success(relativePath, streamxChannel);
-        } catch (final StreamxClientException exc) {
-            Logger.error(this.getClass(), "Cannot push content to StreamX", exc);
-            return StreamxPushSummary.streamxError(relativePath, streamxChannel, exc.getMessage());
-        }
-    }
-
-    @Value
-    private static class Data {
-        ByteBuffer content;
     }
 }
