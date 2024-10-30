@@ -82,7 +82,8 @@ public class Activator extends GenericBundleActivator {
         localSystemEventsAPI.subscribe(publicationListener);
     }
 
-    private PublicationListener createPublicationListener(final StreamxClient streamxClient) {
+    private PublicationListener createPublicationListener(final StreamxClient streamxClient)
+        throws StreamxClientException {
         final StreamxPublisherImpl streamxPublisher = new StreamxPublisherImpl(streamxClient);
 
         final List<PublicationHandler> publicationHandlers = List.of(
