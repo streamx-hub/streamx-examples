@@ -37,6 +37,12 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
+
+### NPM ###
 node_modules
+
+### StreamX repository ###
 /dotcms/repository/
-/dotcms/demo-connector/test/cypress/screenshots/
+
+### Cypress ###
+**/cypress/screenshots/
