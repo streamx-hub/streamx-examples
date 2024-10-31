@@ -40,7 +40,7 @@ services:
   dotcms:
     image: dotcms/dotcms:24.04.24_lts_v3
     environment:
-      CMS_JAVA_OPTS: '-Xmx1g '
+      CMS_JAVA_OPTS: '-Xmx2g '
       LANG: 'C.UTF-8'
       TZ: 'UTC'
       DB_BASE_URL: "jdbc:postgresql://db/dotcms"

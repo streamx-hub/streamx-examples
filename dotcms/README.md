@@ -14,6 +14,8 @@ By completing the steps below, you will configure and validate an integration be
 Follow the instructions under the next sections to configure a local StreamX demo environment with dotCMS as a data
 source.
 
+> Make sure that you have **at least 8GB memory allocated** for docker containers. On Docker Desktop you can go to Settings -> Resources to update the memory available to containers
+
 > Unless otherwise stated, all terminal commands and paths are relative to the `<repo_checkout>/dotcms` folder
 
 ## dotCMS setup
@@ -91,6 +93,11 @@ The StreamX connector will take care of pushing content to StreamX when you comp
     * Blog (/blog.html)
     * Products (/products.html)
 
+Alternatively you can use Cypress tests to do the publication for you. 
+  * Go to `demo-connector/test` folder
+  * Run `npm install`
+  * Run `npx cypress run --spec cypress/e2e/prepare.cy.js`
+
 # Validation
 
 At this point StreamX should have all the dotCMS demo data processed which can be validated by opening the following pages. In the demo we are using `nip.io` to map localhost to a more distinguishable hostname, but using localhost would also work.
@@ -100,6 +107,8 @@ At this point StreamX should have all the dotCMS demo data processed which can b
 * Open http://streamx.127.0.0.1.nip.io/sitemap.xml in your web browser to check the content of the auto-generated sitemap.xml
   file
 * Open http://streamx.127.0.0.1.nip.io/search?query=Containix in your web browser to validate that hits for the search term `Containix`
+
+* There is Cypress suite to validate the content `npx cypress run --spec cypress/e2e/verify.cy.js`
 
 ## Versions used for testing
 

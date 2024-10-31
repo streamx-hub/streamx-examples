@@ -37,3 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
+node_modules
+/dotcms/repository/
+/dotcms/demo-connector/test/cypress/screenshots/
