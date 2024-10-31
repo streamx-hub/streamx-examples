@@ -65,7 +65,7 @@
                         <Bundle-DocURL>https://www.streamx.dev/</Bundle-DocURL>
                         <Bundle-Activator>dev.streamx.dotcms.connector.Activator</Bundle-Activator>
                         <Import-Package>
-                            !dev.streamx.dotcms.connector.*,com.github.luben.zstd;resolution:=optional,net.sf.ehcache;resolution:=optional,net.spy.memcached;resolution:=optional,*
+                            !dev.streamx.dotcms.connector.*,!dev.streamx.blueprints.data.*,com.github.luben.zstd;resolution:=optional,net.sf.ehcache;resolution:=optional,net.spy.memcached;resolution:=optional,*
                         </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=true</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>

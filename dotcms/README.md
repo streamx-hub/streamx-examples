@@ -106,7 +106,7 @@ At this point StreamX should have all the dotCMS demo data processed which can b
   landing pages, or the sample blog article and product pages
 * Open http://streamx.127.0.0.1.nip.io/sitemap.xml in your web browser to check the content of the auto-generated sitemap.xml
   file
-* Open http://streamx.127.0.0.1.nip.io/search?query=Containix in your web browser to validate that hits for the search term `Containix`
+* Open http://streamx.127.0.0.1.nip.io/search/byQuery?query=containix in your web browser to validate that hits for the search term `containix`
 
 * There is Cypress suite to validate the content `npx cypress run --spec cypress/e2e/verify.cy.js`
 
@@ -117,4 +117,4 @@ Instructions and commands above were tested on:
 * `macOS 14.5 (23F79)`
 * `Docker Engine 26.1.4` with `containerd 1.6.33` and `runc 1.1.12`
 * `Docker Compose version v2.27.1-desktop.1`
-* `StreamX CLI 0.3.8` on `OpenJDK Runtime Environment Temurin-17.0.11+9 (build 17.0.11+9)`
+* `StreamX CLI 0.3.9` on `OpenJDK Runtime Environment Temurin-17.0.11+9 (build 17.0.11+9)`
