@@ -12,7 +12,7 @@ describe('Verify StreamX', () => {
   })
 
   it('Search contains link to product page', () => {
-    cy.request("http://localhost/search?query=Containix").as("response")
+    cy.request("http://localhost/search/byQuery?query=containix").as("response")
     cy.get("@response").should((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.items[0]).to.have.property("path", "products/product.html")
