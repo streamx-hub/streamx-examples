@@ -15,7 +15,7 @@ describe('Verify StreamX', () => {
     cy.request("http://localhost/search/byQuery?query=containix").as("response")
     cy.get("@response").should((response) => {
       expect(response.status).to.eq(200)
-      expect(response.body.items[0]).to.have.property("path", "products/product.html")
+      expect(response.body.hits.hits[0]).to.have.property("_id", "/products/product.html")
     })
   })
 
