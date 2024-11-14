@@ -126,6 +126,6 @@ Instructions and commands above were tested on:
 If you encounter 404 error on magnolia pages like:
 http://localhost:8083/magnoliaAuthor/.magnolia/admincentral#app:jcr-browser-app:browser
 you need to:
--stop magnolia
--manually delete folders: apache-tomcat, downloads, light-modules
--redo all actions from this readme
+* stop magnolia
+* manually delete folders: apache-tomcat, downloads, light-modules
+* redo all actions from this readme
