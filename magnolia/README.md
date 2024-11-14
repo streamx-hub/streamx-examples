@@ -66,7 +66,7 @@ Search for this part in the file:
 ```
 and change the port value to `8083` or any other port that is not being used on your system.
 
-### Run Mangnolia CMS
+### Run Magnolia CMS
 
 Finally Magnolia can be started with the following command:
 
