@@ -7,7 +7,7 @@ This repository contains example StreamX usages with different technologies.
 | Demo                                | Description | Additional resources |
 |-------------------------------------| ------- | ------- |
 | [dotCMS](./dotcms/README.md)        | How to set up [dotCMS](https://www2.dotcms.com/docs/latest/table-of-contents) and StreamX locally | [Video tutorial](https://www.streamx.dev/technical-blog/2024/dotcms-streamx-video-tutorial.html?utm_source=github&utm_medium=readme&utm_campaign=streamx-examples) |
-| [MagnoliaCMS](./magnolia/README.md) | Magnolia CMS | How to set up [Magnolia CMS](https://docs.magnolia-cms.com/product-docs/6.3/getting-started-with-magnolia/) and StreamX locally |
+| [MagnoliaCMS](./magnolia/README.md) | How to set up [Magnolia CMS](https://docs.magnolia-cms.com/product-docs/6.3/getting-started-with-magnolia/) and StreamX locally | [Video tutorial](https://www.youtube.com/watch?v=qr_IirrG3hs) |
 
 ## Coming soon
 
