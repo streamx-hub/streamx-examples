@@ -1,0 +1,24 @@
+datasource:
+  workspace: articles
+  autoCreate: true
+
+model:
+  nodeType: mgnl:content
+  properties:
+    - name: title
+      required: true
+    - name: content
+      type: richText
+      required: true
+    - name: imageUUID
+      required: true
+      type: asset
+    - name: author
+      required: true
+    - name: jobTitle
+    - name: date
+      type: Date
+    - name: detailPagePath
+      type: reference:page
+    - name: renderedPageParent
+      type: reference:page

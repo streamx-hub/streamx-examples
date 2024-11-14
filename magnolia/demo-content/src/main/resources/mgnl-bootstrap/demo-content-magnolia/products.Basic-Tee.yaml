@@ -1,0 +1,25 @@
+'Basic-Tee':
+  'color': 'Black'
+  'description': '<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui
+    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+    molestias excepturi sint occaecati cupiditate non provident, similique sunt in
+    culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et
+    harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+    soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+    placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+    Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+    eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
+    earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+    alias consequatur aut perferendis doloribus asperiores repellat.</p>
+
+    '
+  'detailPagePath': '8bc4d0b5-4c96-4b5b-a9db-a75b62b5b018'
+  'imageUUID': 'jcr:d2daf565-9d26-4f15-a4a8-fb1873d5bf4b'
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:content'
+  'jcr:uuid': '55549ab0-e3d4-48ba-bea2-0cc3b59a9a53'
+  'mgnl:created': 2024-07-31T11:42:46.454+02:00
+  'mgnl:createdBy': 'superuser'
+  'price': 35
+  'renderedPageParent': 'e2dda21e-434e-4cae-aeeb-8c526cc2ccb1'
+  'title': 'Basic Tee'

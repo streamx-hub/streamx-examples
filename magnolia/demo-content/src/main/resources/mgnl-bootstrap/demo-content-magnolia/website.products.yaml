@@ -1,0 +1,18 @@
+'products':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': 'e2dda21e-434e-4cae-aeeb-8c526cc2ccb1'
+  'mgnl:created': 2024-07-31T11:29:45.265+02:00
+  'mgnl:createdBy': 'superuser'
+  'mgnl:template': 'demo-content-magnolia:pages/streamx-home'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': 'f6476037-109f-4d8f-b3c0-4ce2635b8a54'
+    'mgnl:created': 2024-07-31T11:30:28.119+02:00
+    'mgnl:createdBy': 'superuser'
+    '0':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '75c5e431-5cb2-41d1-ad92-626072da1d9d'
+      'mgnl:created': 2024-07-31T11:30:33.625+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:template': 'demo-content-magnolia:components/streamx-products-list'

@@ -1,0 +1,17 @@
+templateScript: /demo-content-magnolia/templates/pages/streamx-home.ftl
+renderType: freemarker
+visible: true
+
+areas:
+  main:
+    availableComponents:
+      streamx-home-content:
+        id: demo-content-magnolia:components/streamx-home-content
+      streamx-products-list:
+        id: demo-content-magnolia:components/streamx-products-list
+      streamx-product-detail:
+        id: demo-content-magnolia:components/streamx-product-detail
+      streamx-articles-list:
+        id: demo-content-magnolia:components/streamx-articles-list
+      streamx-article-detail:
+        id: demo-content-magnolia:components/streamx-article-detail
