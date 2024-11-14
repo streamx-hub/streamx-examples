@@ -1,0 +1,18 @@
+'index':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': 'fd20ab89-b797-445e-9822-52ac97287847'
+  'mgnl:created': 2024-07-31T11:28:54.167+02:00
+  'mgnl:createdBy': 'superuser'
+  'mgnl:template': 'demo-content-magnolia:pages/streamx-home'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': '5e62fab6-93ec-4392-bb6f-dd45e5ecbcea'
+    'mgnl:created': 2024-07-31T11:29:48.578+02:00
+    'mgnl:createdBy': 'superuser'
+    '0':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '19e477fd-5fa6-4eec-a6ed-477ca75bfa14'
+      'mgnl:created': 2024-07-31T11:30:05.262+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:template': 'demo-content-magnolia:components/streamx-home-content'

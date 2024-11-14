@@ -1,0 +1,23 @@
+datasource:
+  workspace: products
+  autoCreate: true
+
+model:
+  nodeType: mgnl:content
+  properties:
+    - name: title
+      required: true
+    - name: description
+      type: richText
+      required: true
+    - name: color
+    - name: imageUUID
+      required: true
+      type: asset
+    - name: price
+      required: true
+      type: Long
+    - name: detailPagePath
+      type: reference:page
+    - name: renderedPageParent
+      type: reference:page
