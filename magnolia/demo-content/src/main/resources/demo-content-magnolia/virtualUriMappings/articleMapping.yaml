@@ -1,0 +1,3 @@
+class: info.magnolia.virtualuri.mapping.RegexpVirtualUriMapping
+fromUri: ^/(?!\.\w+/)(.*/)?blog/(.*).html
+toUri: forward:/article?article=/$2

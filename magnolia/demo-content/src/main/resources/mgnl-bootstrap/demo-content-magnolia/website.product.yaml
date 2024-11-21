@@ -1,0 +1,17 @@
+'product':
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': '8bc4d0b5-4c96-4b5b-a9db-a75b62b5b018'
+  'mgnl:created': 2024-07-31T11:31:03.800+02:00
+  'mgnl:createdBy': 'superuser'
+  'mgnl:template': 'demo-content-magnolia:pages/streamx-home'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': 'd070707f-91d9-44da-b8e9-5bfef15431a9'
+    'mgnl:created': 2024-07-31T11:31:05.602+02:00
+    'mgnl:createdBy': 'superuser'
+    '0':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '43692524-f435-4474-a687-59e804c0ce7d'
+      'mgnl:created': 2024-07-31T11:31:13.878+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:template': 'demo-content-magnolia:components/streamx-product-detail'

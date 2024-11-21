@@ -1,0 +1,2 @@
+templateScript: /demo-content-magnolia/templates/components/streamx-home-content.ftl
+renderType: freemarker

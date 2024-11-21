@@ -1,0 +1,3 @@
+templateScript: /demo-content-magnolia/templates/components/streamx-articles-list.ftl
+modelClass: dev.streamx.model.ArticlesListModel
+renderType: freemarker

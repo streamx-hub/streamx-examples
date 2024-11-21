@@ -1,0 +1,18 @@
+'article':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': '133064ba-207c-4814-adfb-6fa09fe280cd'
+  'mgnl:created': 2024-07-31T11:30:44.439+02:00
+  'mgnl:createdBy': 'superuser'
+  'mgnl:template': 'demo-content-magnolia:pages/streamx-home'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': '348cd05d-e3aa-4e7e-b059-d470c2ad6ffa'
+    'mgnl:created': 2024-07-31T11:30:46.108+02:00
+    'mgnl:createdBy': 'superuser'
+    '0':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': 'd9af0e8a-e7ba-40ab-9cc7-c78442dda0bc'
+      'mgnl:created': 2024-07-31T11:30:50.500+02:00
+      'mgnl:createdBy': 'superuser'
+      'mgnl:template': 'demo-content-magnolia:components/streamx-article-detail'
