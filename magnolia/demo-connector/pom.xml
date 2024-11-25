@@ -10,7 +10,7 @@
   <properties>
     <magnoliaBundleVersion>6.3.0</magnoliaBundleVersion>
     <javaVersion>17</javaVersion>
-    <streamx.ingestion-client.version>0.0.44</streamx.ingestion-client.version>
+    <streamx.ingestion-client.version>1.0.0</streamx.ingestion-client.version>
   </properties>
 
   <dependencyManagement>

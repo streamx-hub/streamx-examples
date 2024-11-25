@@ -108,8 +108,9 @@ delivery:
         ports:
           - 80:80
         repositoryVolume: "/usr/share/nginx/html"
-        volumes:
-          - "nginx.conf:/etc/nginx/conf.d/default.conf"
+        volumesFrom:
+          configs:
+            - "nginx.conf:/etc/nginx/conf.d/default.conf"
 
   search-delivery:
     image: opensearch-delivery-service
