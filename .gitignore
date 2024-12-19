@@ -46,3 +46,7 @@ node_modules
 
 ### Cypress ###
 **/cypress/screenshots/
+
+## Magnolia downloaded files
+/magnolia/apache-tomcat
+/magnolia/downloads
