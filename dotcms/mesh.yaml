@@ -1,5 +1,5 @@
 defaultRegistry: ghcr.io/streamx-dev/streamx-blueprints
-defaultImageTag: 0.0.29-jvm
+defaultImageTag: 1.0.1-jvm
 
 sources:
   cli:

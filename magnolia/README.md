@@ -68,7 +68,7 @@ and change the port value to `8083` or any other port that is not being used on 
 
 ### Run Magnolia CMS
 
-Finally Magnolia can be started with the following command:
+Finally, Magnolia can be started with the following command:
 
 ```bash
 mgnl start
@@ -95,9 +95,9 @@ The StreamX connector will take care of pushing content to StreamX when you comp
 * In the [Assets App](http://localhost:8083/magnoliaAuthor/.magnolia/admincentral#app:dam:jcrBrowser;::), publish all images.
 * In the [Pages App](http://localhost:8083/magnoliaAuthor/.magnolia/admincentral#app:pages-app:browser;::), publish the
   following pages:
-    * Index (/index.html),
-    * Blog (/blog.html),
-    * Products (/products.html).
+    * Index (`/index.html`),
+    * Blog (`/blog.html`),
+    * Products (`/products.html`).
 * In the [Custom Articles App](http://localhost:8083/magnoliaAuthor/.magnolia/admincentral#app:articles-app:browser), publish the article.
 * In the [Custom Products App](http://localhost:8083/magnoliaAuthor/.magnolia/admincentral#app:products-app:browser), publish the product.
 
@@ -109,7 +109,7 @@ At this point StreamX should have all the Magnolia CMS demo data processed which
   landing pages, or the sample blog article and product pages.
 * Open http://streamx.127.0.0.1.nip.io/sitemap.xml in your web browser to check the content of the auto-generated sitemap.xml
   file.
-* Open http://streamx.127.0.0.1.nip.io/search/byQuery?query=tee in your web browser to validate that hits for the search term `tee`.
+* Open http://streamx.127.0.0.1.nip.io/search/query?query=tee in your web browser to validate that hits for the search term `tee`.
 
 ## Versions used for testing
 
@@ -119,7 +119,7 @@ Instructions and commands above were tested on:
 * `Docker Engine 25.0.3`,
 * `Node.js 18.20.4`,
 * `Magnolia CLI 4.0.12`,
-* `StreamX CLI 0.3.9` and `Magnolia CMS 6.3.0` on `OpenJDK Runtime Environment Temurin-17.0.11+9 (build 17.0.11+9)`.
+* `StreamX CLI 1.0.0` and `Magnolia CMS 6.3.0` on `OpenJDK Runtime Environment Temurin-17.0.11+9 (build 17.0.11+9)`.
 
 ## Troubleshooting
 
